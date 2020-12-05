@@ -1,5 +1,3 @@
-import json
-
 input_file = open('input.txt', 'r')
 input_data = input_file.read()
 input_file.closed
@@ -16,7 +14,7 @@ for large_number in sorted_numbers:
                 print('large number is', large_number)
                 print('mid number is', sorted_numbers[mid_count])
                 print('small number is', sorted_numbers[small_count])
-                print('produce is', large_number * sorted_numbers[mid_count] * sorted_numbers[small_count])
+                print('product is', large_number * sorted_numbers[mid_count] * sorted_numbers[small_count])
                 raise SystemExit
             elif number_sum > 2020:
                 break
