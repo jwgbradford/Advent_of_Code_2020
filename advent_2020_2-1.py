@@ -13,7 +13,8 @@ for line in input_data:
     letter_code = letter_code[0]
     pattern = '[' +letter_code + ']'
     password_match = re.findall(pattern, line)
-    if len(password_match) >= int(lower) and len(password_match) <= int(upper):
+    occurance = len(password_match) - 1 # to exclude our original code letter
+    if occurance >= int(lower) and occurance <= int(upper):
         print('success')
         success += 1
     else:
