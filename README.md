@@ -6,4 +6,4 @@ Challenge two approach - string parsing using simple regex to make sure each pas
 
 Challenge three approach - split 'map' of hillside in to list, step through each 'level' of the hillside, looping when you get to an edge. Remembering that computers count from 0, and lists have line return characters. The hardest part is indexing lists.
 
-Challenge four approach - key value pairs screams dictionary in python. The data is a complete jumble though, we'll have to add null values for missing data, and can't rely on any of it for a UID. Also need to be careful about sorting and comparing key lists, and eof.
+Challenge four approach - key value pairs screams dictionary in python. The data is a complete jumble though, we'll have to add null values for missing data, and can't rely on any of it for a UID. Also need to be careful about sorting and comparing key lists, and eof. Also need to be *very* careful with length of data fields

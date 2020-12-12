@@ -3,26 +3,30 @@ import re
 EYE_COLOURS = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
 
 def check_byr(passport_data):
-    if passport_data.isdigit():
+    if passport_data.isdigit() and len(passport_data) == 4:
         if 1920 <= int(passport_data) <= 2002:
+            #print('pass', 'our digits; at least 1920 and at most 2002', passport_data)
             return True
+    #print('fail', passport_data)
     return False
 
 def check_ecl(passport_data):
-    colour_check = passport_data[0:3]
-    if colour_check in EYE_COLOURS:
+    if passport_data in EYE_COLOURS and len(passport_data) == 3:
+        #print('pass', 'exactly one of: amb blu brn gry grn hzl oth.', passport_data)
         return True
     return False
 
 def check_eyr(passport_data):
-    if passport_data.isdigit():
+    if passport_data.isdigit() and len(passport_data) == 4:
         if 2020 <= int(passport_data) <= 2030:
+            #print('pass', 'four digits; at least 2020 and at most 2030', passport_data)
             return True
+    #print('fail', passport_data)
     return False
 
 def check_hcl(passport_data):
     pattern = '#[0-9a-f]{6}'
-    if re.search(pattern, passport_data):
+    if re.search(pattern, passport_data) and len(passport_data) == 7:
         return True
     else:
         return False
@@ -38,19 +42,20 @@ def check_hgt(passport_data):
         if 59 <= height <= 76:
             #print('pass', 'If in, the number must be at least 59 and at most 76.', passport_data)
             return True
-    print('fail', passport_data)
+    #print('fail', passport_data)
     return False
 
 def check_iyr(passport_data):
-    if passport_data.isdigit():
+    if passport_data.isdigit() and len(passport_data) == 4:
         if 2010 <= int(passport_data) <= 2020:
-            print('pass', 'four digits; at least 2010 and at most 2020.')
+            #print('pass', 'four digits; at least 2010 and at most 2020.', passport_data)
             return True
+    #print('fail', 'four digits; at least 2010 and at most 2020.', passport_data)
     return False
 
 def check_pid(passport_data):
     pattern = '\A\d{9}'
-    if re.search(pattern, passport_data):
+    if re.search(pattern, passport_data) and len(passport_data) == 9:
         return True
     else:
         return False
